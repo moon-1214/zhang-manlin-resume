@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>张嫚琳 - 个人简历 | 初中信息技术教师</title>
+  <meta name="description" content="张嫚琳个人简历，昆明学院数据科学与大数据技术专业，求职意向初中信息技术老师">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.cn">
+  <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin>
+  <link href="https://fonts.googleapis.cn/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link href="styles/main.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 背景光效 -->
+  <div class="bg-glow"></div>
+  <div class="bg-grid"></div>
+
+  <!-- 导航栏 -->
+  <nav class="navbar-custom" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-text">ZML</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="切换导航">
+        <i class="bi bi-list"></i>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" class="nav-link active"><i class="bi bi-person"></i> 关于我</a></li>
+        <li><a href="#education" class="nav-link"><i class="bi bi-mortarboard"></i> 教育经历</a></li>
+        <li><a href="#skills" class="nav-link"><i class="bi bi-tools"></i> 专业技能</a></li>
+        <li><a href="#experience" class="nav-link"><i class="bi bi-briefcase"></i> 实践经历</a></li>
+        <li><a href="#awards" class="nav-link"><i class="bi bi-award"></i> 获奖荣誉</a></li>
+        <li><a href="#contact" class="nav-link"><i class="bi bi-envelope"></i> 联系我</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+        <i class="bi bi-moon-stars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero 区域 -->
+  <section class="hero-section" id="hero">
+    <div class="hero-container">
+      <!-- 证件照 -->
+      <div class="avatar-wrapper">
+        <div class="avatar-glow"></div>
+        <div class="avatar-border">
+          <img src="public/avatar.jpg" alt="张嫚琳证件照" class="avatar-img">
+        </div>
+        <div class="avatar-badge">
+          <i class="bi bi-mortarboard-fill"></i>
+          <span>应届毕业生</span>
+        </div>
+      </div>
+      
+      <!-- 基本信息 -->
+      <div class="hero-info">
+        <h1 class="hero-name">
+          <span class="name-text">张嫚琳</span>
+        </h1>
+        <div class="hero-tagline">
+          <span class="tagline-item">
+            <i class="bi bi-geo-alt"></i>
+            昆明学院 · 数据科学与大数据技术
+          </span>
+          <span class="tagline-divider"></span>
+          <span class="tagline-item">
+            <i class="bi bi-briefcase"></i>
+            求职意向：初中信息技术教师
+          </span>
+        </div>
+        <div class="hero-location">
+          <i class="bi bi-map"></i>
+          期望工作地点：云南省 | 求职状态：待职
+        </div>
+        
+        <!-- 统计数据 -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="bi bi-award"></i></div>
+            <div class="stat-number" data-target="8">8</div>
+            <div class="stat-label">获奖证书</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="bi bi-calendar-check"></i></div>
+            <div class="stat-number" data-target="5">5</div>
+            <div class="stat-label">实践活动</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="bi bi-book"></i></div>
+            <div class="stat-number" data-target="8">8</div>
+            <div class="stat-label">主修课程</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="bi bi-translate"></i></div>
+            <div class="stat-number" data-target="4">4</div>
+            <div class="stat-label">技能证书</div>
+          </div>
+        </div>
+        
+        <!-- 行动按钮 -->
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">
+            <i class="bi bi-envelope"></i>
+            联系我
+          </a>
+          <button class="btn-secondary" onclick="window.print()">
+            <i class="bi bi-download"></i>
+            下载简历
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于我 -->
+  <section class="section about-section" id="about">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="title-icon"><i class="bi bi-person-lines-fill"></i></span>
+        关于我
+      </h2>
+      
+      <div class="about-grid">
+        <!-- 个人信息卡片 -->
+        <div class="about-card glass-card">
+          <h3 class="card-title"><i class="bi bi-card-list"></i> 基本信息</h3>
+          <div class="info-list">
+            <div class="info-item">
+              <span class="info-label">年龄</span>
+              <span class="info-value">21岁</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">性别</span>
+              <span class="info-value">女</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">民族</span>
+              <span class="info-value">汉族</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">籍贯</span>
+              <span class="info-value">云南红河</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">政治面貌</span>
+              <span class="info-value">共青团员</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">现居城市</span>
+              <span class="info-value">昆明</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 自我评价卡片 -->
+        <div class="about-card glass-card">
+          <h3 class="card-title"><i class="bi bi-chat-quote"></i> 自我评价</h3>
+          <div class="evaluation-tags">
+            <span class="eval-tag"><i class="bi bi-heart"></i> 性格温和，待人耐心友善</span>
+            <span class="eval-tag"><i class="bi bi-book"></i> 善于学习，乐于接受指导</span>
+            <span class="eval-tag"><i class="bi bi-sun"></i> 积极乐观，充满正能量</span>
+          </div>
+          <p class="eval-desc">具备扎实的计算机专业基础，热爱教育事业，善于与学生沟通交流，能够将信息技术知识生动有趣地传授给学生。</p>
+          <p class="about-desc">
+            我是一名数据科学与大数据技术专业的应届毕业生，具备扎实的专业基础和丰富的实践经验。在校期间积极参与各类志愿服务和社会实践，培养了良好的沟通能力和团队协作精神。性格温柔有耐心，热爱教育事业，希望能够成为一名优秀的人民教师。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 教育经历 -->
+  <section class="section education-section" id="education">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="title-icon"><i class="bi bi-mortarboard-fill"></i></span>
+        教育经历
+      </h2>
+      
+      <div class="timeline">
+        <!-- 大学 -->
+        <div class="timeline-item left">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-date">2023.09 — 2027.07</div>
+            <h3 class="timeline-title">昆明学院</h3>
+            <div class="timeline-subtitle">数据科学与大数据技术 · 本科</div>
+            <div class="timeline-desc">
+              <p><strong>主修课程：</strong></p>
+              <div class="course-tags">
+                <span class="course-tag">数据科学与大数据技术导论</span>
+                <span class="course-tag">数据挖掘与机器学习</span>
+                <span class="course-tag">多元统计分析</span>
+                <span class="course-tag">操作系统</span>
+                <span class="course-tag">大数据存储与处理技术</span>
+                <span class="course-tag">数据库原理与应用</span>
+                <span class="course-tag">大数据技术与应用</span>
+                <span class="course-tag">离散数学</span>
+                <span class="course-tag">程序设计</span>
+                <span class="course-tag">计算机网络</span>
+                <span class="course-tag">分布式系统与云计算</span>
+                <span class="course-tag">人工智能及应用</span>
+                <span class="course-tag">数据结构</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 高中 -->
+        <div class="timeline-item right">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-date">2020.09 — 2023.06</div>
+            <h3 class="timeline-title">建水实验中学</h3>
+            <div class="timeline-subtitle">理科 · 高中</div>
+            <div class="timeline-desc">
+              <p>完成高中阶段理科基础教育，为大学专业学习打下坚实基础。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专业技能 -->
+  <section class="section skills-section" id="skills">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="title-icon"><i class="bi bi-tools"></i></span>
+        专业技能
+      </h2>
+      
+      <div class="skills-grid">
+        <!-- 技术技能 -->
+        <div class="skill-category glass-card">
+          <h3 class="skill-cat-title"><i class="bi bi-code-slash"></i> 技术技能</h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">C 语言程序设计</span>
+                <span class="skill-percent">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">MySQL 数据库</span>
+                <span class="skill-percent">75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">数据结构与算法</span>
+                <span class="skill-percent">70%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-fill" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 语言证书 -->
+        <div class="skill-category glass-card">
+          <h3 class="skill-cat-title"><i class="bi bi-translate"></i> 语言证书</h3>
+          <div class="cert-list">
+            <div class="cert-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>大学英语四级</span>
+            </div>
+            <div class="cert-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>普通话二级乙等</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 其他技能 -->
+        <div class="skill-category glass-card">
+          <h3 class="skill-cat-title"><i class="bi bi-star"></i> 其他技能</h3>
+          <div class="cert-list">
+            <div class="cert-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>软考初级证书 · 信息处理员</span>
+            </div>
+            <div class="cert-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>机动车驾驶证</span>
+            </div>
+            <div class="cert-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>SYB 创业培训合格证</span>
+            </div>
+          </div>
+          <div class="soft-skills">
+            <h4 class="soft-skill-title">综合素质</h4>
+            <div class="soft-skill-tags">
+              <span class="soft-tag">教学能力</span>
+              <span class="soft-tag">团队协作</span>
+              <span class="soft-tag">沟通表达</span>
+              <span class="soft-tag">组织协调</span>
+              <span class="soft-tag">志愿服务</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 实践经历 -->
+  <section class="section experience-section" id="experience">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="title-icon"><i class="bi bi-briefcase-fill"></i></span>
+        实践经历
+      </h2>
+      
+      <div class="exp-grid">
+        <!-- 顺通社区 -->
+        <div class="exp-card glass-card featured">
+          <div class="exp-header">
+            <div class="exp-icon"><i class="bi bi-house"></i></div>
+            <div class="exp-title-area">
+              <h3 class="exp-title">顺通社区</h3>
+              <div class="exp-role">社区实习</div>
+            </div>
+            <div class="exp-date">2024.09 — 2024.10</div>
+          </div>
+          <div class="exp-desc">
+            <p>深入基层社区，协助工作人员完成多项公共服务工作：</p>
+            <ul class="exp-list">
+              <li>食品药品安全巡查与监管</li>
+              <li>社区环境卫生整治活动</li>
+              <li>青年团课活动策划组织</li>
+              <li>消防安全宣传与检查</li>
+              <li>医疗保险政策宣传通知</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- 志愿活动 -->
+        <div class="exp-card glass-card">
+          <div class="exp-header">
+            <div class="exp-icon"><i class="bi bi-heart"></i></div>
+            <div class="exp-title-area">
+              <h3 class="exp-title">志愿服务经历</h3>
+              <div class="exp-role">积极投身公益</div>
+            </div>
+          </div>
+          <div class="volunteer-list">
+            <div class="volunteer-item">
+              <span class="vol-date">2025.05</span>
+              <span class="vol-title">昆明市青年志愿者协会 · "变塑有术"环保主题活动</span>
+            </div>
+            <div class="volunteer-item">
+              <span class="vol-date">2024.12</span>
+              <span class="vol-title">"探寻昆明记忆追溯地名渊源"文化主题活动</span>
+            </div>
+            <div class="volunteer-item">
+              <span class="vol-date">2024.07</span>
+              <span class="vol-title">全国乡村旅游培训班 · 接待全国各地文旅局领导</span>
+            </div>
+            <div class="volunteer-item">
+              <span class="vol-date">2024.07</span>
+              <span class="vol-title">西山区青社领航 · 教学志愿服务活动</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 获奖荣誉 -->
+  <section class="section awards-section" id="awards">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="title-icon"><i class="bi bi-award-fill"></i></span>
+        获奖荣誉
+      </h2>
+      
+      <div class="awards-grid">
+        <div class="award-card glass-card gold">
+          <div class="award-icon"><i class="bi bi-trophy"></i></div>
+          <h3 class="award-title">学创杯全国大学生创业综合模拟大赛</h3>
+          <div class="award-subtitle">数字营销 · 优秀奖</div>
+          <div class="award-year">2024年</div>
+        </div>
+        
+        <div class="award-card glass-card silver">
+          <div class="award-icon"><i class="bi bi-medal"></i></div>
+          <h3 class="award-title">"挑战杯"中国大学生创业计划竞赛</h3>
+          <div class="award-subtitle">优秀奖</div>
+          <div class="award-year">2023年</div>
+        </div>
+        
+        <div class="award-card glass-card bronze">
+          <div class="award-icon"><i class="bi bi-star"></i></div>
+          <h3 class="award-title">全国大学生创新创业大赛</h3>
+          <div class="award-subtitle">优秀奖</div>
+          <div class="award-year">2024年</div>
+        </div>
+        
+        <div class="award-card glass-card">
+          <div class="award-icon"><i class="bi bi-emoji-smile"></i></div>
+          <h3 class="award-title">"返家乡"社会实践</h3>
+          <div class="award-subtitle">优秀实践个人</div>
+          <div class="award-year">2025年寒假</div>
+        </div>
+        
+        <div class="award-card glass-card">
+          <div class="award-icon"><i class="bi bi-bullseye"></i></div>
+          <h3 class="award-title">全国大学生职业规划大赛</h3>
+          <div class="award-subtitle">校级优秀奖</div>
+          <div class="award-year">第二届</div>
+        </div>
+        
+        <div class="award-card glass-card">
+          <div class="award-icon"><i class="bi bi-hand-thumbs-up"></i></div>
+          <h3 class="award-title">志愿服务优秀志愿者</h3>
+          <div class="award-subtitle">昆明学院 2024-2025学年</div>
+          <div class="award-year">校团委</div>
+        </div>
+        
+        <div class="award-card glass-card">
+          <div class="award-icon"><i class="bi bi-people"></i></div>
+          <h3 class="award-title">校团委学术科技部</h3>
+          <div class="award-subtitle">优秀干事</div>
+          <div class="award-year">2024-2025学年</div>
+        </div>
+        
+        <div class="award-card glass-card">
+          <div class="award-icon"><i class="bi bi-code"></i></div>
+          <h3 class="award-title">C 语言程序设计竞赛</h3>
+          <div class="award-subtitle">参赛经历</div>
+          <div class="award-year">2024年</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系我 -->
+  <section class="section contact-section" id="contact">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="title-icon"><i class="bi bi-envelope-fill"></i></span>
+        联系我
+      </h2>
+      
+      <div class="contact-grid">
+        <!-- 联系方式 -->
+        <div class="contact-info glass-card">
+          <h3 class="contact-title"><i class="bi bi-links"></i> 联系方式</h3>
+          <div class="contact-list">
+            <a href="tel:18314149690" class="contact-item">
+              <i class="bi bi-phone"></i>
+              <span>18314149690</span>
+            </a>
+            <a href="mailto:21237235776@qq.com" class="contact-item">
+              <i class="bi bi-envelope"></i>
+              <span>21237235776@qq.com</span>
+            </a>
+            <div class="contact-item">
+              <i class="bi bi-geo-alt"></i>
+              <span>云南省昆明市</span>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <h4 class="social-title">社交媒体</h4>
+            <div class="social-grid">
+              <a href="#" class="social-link" title="微信">
+                <i class="bi bi-wechat"></i>
+              </a>
+              <a href="#" class="social-link" title="QQ">
+                <i class="bi bi-tencent-qq"></i>
+              </a>
+              <a href="#" class="social-link" title="微博">
+                <i class="bi bi-sina-weibo"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 留言表单 -->
+        <div class="contact-form glass-card">
+          <h3 class="contact-title"><i class="bi bi-pencil"></i> 给我留言</h3>
+          <form id="contactForm" class="form-content">
+            <div class="form-group">
+              <label for="name">姓名</label>
+              <input type="text" id="name" name="name" required placeholder="请输入您的姓名">
+            </div>
+            <div class="form-group">
+              <label for="email">邮箱</label>
+              <input type="email" id="email" name="email" required placeholder="请输入您的邮箱">
+            </div>
+            <div class="form-group">
+              <label for="message">留言内容</label>
+              <textarea id="message" name="message" rows="4" required placeholder="请输入留言内容"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+              <i class="bi bi-send"></i>
+              发送留言
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">ZML</div>
+      <div class="footer-text">张嫚琳 · 个人简历网站</div>
+      <div class="footer-copy">
+        <span>© 2025 张嫚琳</span>
+        <span class="footer-divider">|</span>
+        <span>昆明学院 · 数据科学与大数据技术</span>
+      </div>
+      <div class="footer-update">
+        <i class="bi bi-clock"></i>
+        最后更新：<span id="updateTime">2025年6月</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 返回顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="返回顶部">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
