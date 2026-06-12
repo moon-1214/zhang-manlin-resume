@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教学作品集 | 张嫚琳 - 初中信息技术教师</title>
+    <link rel="preconnect" href="https://fonts.googleapis.cn">
+    <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin>
+    <link href="https://fonts.googleapis.cn/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+    <style>
+        /* 子页面特定样式 */
+        .portfolio-hero {
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .portfolio-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .portfolio-hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8b5cf6, #06b6d4, #f59e0b);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+        
+        .portfolio-card:hover::before {
+            opacity: 1;
+        }
+        
+        .portfolio-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .portfolio-icon.purple { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .portfolio-icon.cyan { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+        .portfolio-icon.gold { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .portfolio-icon.pink { background: linear-gradient(135deg, #ec4899, #db2777); }
+        
+        .portfolio-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        
+        .portfolio-card .date {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-card .desc {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .portfolio-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .portfolio-tag {
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            background: rgba(139, 92, 246, 0.1);
+            color: #8b5cf6;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 3rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #8b5cf6;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .back-link:hover {
+            color: #a78bfa;
+        }
+        
+        /* 竞赛成果时间线 */
+        .achievement-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .achievement-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .achievement-item:nth-child(1) { animation-delay: 0.1s; }
+        .achievement-item:nth-child(2) { animation-delay: 0.2s; }
+        .achievement-item:nth-child(3) { animation-delay: 0.3s; }
+        .achievement-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        .achievement-year {
+            flex-shrink: 0;
+            width: 80px;
+            text-align: right;
+            font-weight: 600;
+            color: #f59e0b;
+        }
+        
+        .achievement-content {
+            flex: 1;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border-left: 3px solid #8b5cf6;
+        }
+        
+        .achievement-content h4 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .achievement-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="dark-body">
+    <!-- 动态背景 -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-grid"></div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar glass-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-logo">ZML</span>
+            </a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.html">返回主页</a>
+                <a class="nav-link active" href="portfolio.html">教学作品</a>
+                <a class="nav-link" href="index.html#contact">联系我</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="bi bi-moon-fill"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero区域 -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <h1>教学作品集</h1>
+            <p>展示我的教学设计、竞赛成果与项目实践，体现专业能力与教育热情</p>
+        </div>
+    </section>
+
+    <!-- 教学设计作品 -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">教学设计作品</h2>
+            <p class="section-subtitle">面向初中信息技术课程的教学方案设计</p>
+            
+            <div class="portfolio-grid">
+                <!-- 作品卡片1 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-icon purple">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h3>Python入门教学设计</h3>
+                    <div class="date">2024年 · 教学设计</div>
+                    <p class="desc">设计了为期4周的Python入门课程教学方案，包含变量、循环、函数等基础概念的趣味化教学活动，结合游戏化学习提升学生兴趣。</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Python</span>
+                        <span class="portfolio-tag">教学设计</span>
+                        <span class="portfolio-tag">游戏化学习</span>
+                    </div>
+                </div>
+                
+                <!-- 作品卡片2 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-icon cyan">
+                        <i class="bi bi-database"></i>
+                    </div>
+                    <h3>数据库基础课程PPT</h3>
+                    <div class="date">2024年 · 课件制作</div>
+                    <p class="desc">制作了一套完整的数据库原理PPT课件，涵盖SQL基础、表设计、查询语句等内容，配有实例演示和互动练习环节。</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">MySQL</span>
+                        <span class="portfolio-tag">PPT课件</span>
+                        <span class="portfolio-tag">数据库</span>
+                    </div>
+                </div>
+                
+                <!-- 作品卡片3 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-icon gold">
+                        <i class="bi bi-network"></i>
+                    </div>
+                    <h3>计算机网络入门教案</h3>
+                    <div class="date">2024年 · 教案编写</div>
+                    <p class="desc">编写了计算机网络基础概念教案，包含网络拓扑、IP地址、协议等知识点，设计了小组协作实验活动加深理解。</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">计算机网络</span>
+                        <span class="portfolio-tag">教案</span>
+                        <span class="portfolio-tag">实验设计</span>
+                    </div>
+                </div>
+                
+                <!-- 作品卡片4 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-icon pink">
+                        <i class="bi bi-lightbulb"></i>
+                    </div>
+                    <h3>信息安全意识培养活动</h3>
+                    <div class="date">2025年 · 主题活动</div>
+                    <p class="desc">设计了网络安全意识培养主题活动方案，包含密码安全、网络诈骗识别、个人信息保护等内容，采用案例分析教学法。</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">网络安全</span>
+                        <span class="portfolio-tag">活动设计</span>
+                        <span class="portfolio-tag">案例教学</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 竞赛成果 -->
+    <section class="section-padding" style="background: rgba(139, 92, 246, 0.03);">
+        <div class="container">
+            <h2 class="section-title">竞赛成果展示</h2>
+            <p class="section-subtitle">参加各类学科竞赛，锻炼综合能力</p>
+            
+            <div class="achievement-timeline">
+                <div class="achievement-item">
+                    <div class="achievement-year">2024</div>
+                    <div class="achievement-content">
+                        <h4>学创杯全国大学生创业综合模拟大赛 · 优秀奖</h4>
+                        <p>参与数字营销赛道，模拟企业运营全过程，学习市场营销策略与团队协作管理</p>
+                    </div>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-year">2024</div>
+                    <div class="achievement-content">
+                        <h4>C语言程序设计竞赛 · 参赛</h4>
+                        <p>通过竞赛锻炼编程思维，提升算法设计与代码实现能力</p>
+                    </div>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-year">2024</div>
+                    <div class="achievement-content">
+                        <h4>全国大学生创新创业大赛 · 优秀奖</h4>
+                        <p>参与创新创业项目策划，培养创新思维与商业规划能力</p>
+                    </div>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-year">2023</div>
+                    <div class="achievement-content">
+                        <h4>"挑战杯"中国大学生创业计划竞赛 · 优秀奖</h4>
+                        <p>参与创业计划书撰写，学习项目可行性分析与商业模式设计</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目实践 -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">项目实践经验</h2>
+            <p class="section-subtitle">将理论知识应用于实际项目</p>
+            
+            <div class="portfolio-grid">
+                <!-- 项目卡片1 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-icon cyan">
+                        <i class="bi bi-bar-chart"></i>
+                    </div>
+                    <h3>数据分析课程项目</h3>
+                    <div class="date">2024年 · 课程项目</div>
+                    <p class="desc">完成数据挖掘课程项目，使用Python进行数据清洗、分析与可视化，掌握pandas、matplotlib等工具。</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Python</span>
+                        <span class="portfolio-tag">数据分析</span>
+                        <span class="portfolio-tag">可视化</span>
+                    </div>
+                </div>
+                
+                <!-- 项目卡片2 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-icon purple">
+                        <i class="bi bi-file-earmark-code"></i>
+                    </div>
+                    <h3>数据库应用系统开发</h3>
+                    <div class="date">2024年 · 课程项目</div>
+                    <p class="desc">设计并实现小型信息管理系统，包含用户管理、数据存储、查询功能，掌握MySQL数据库设计与SQL编程。</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">MySQL</span>
+                        <span class="portfolio-tag">系统开发</span>
+                        <span class="portfolio-tag">数据库设计</span>
+                    </div>
+                </div>
+                
+                <!-- 项目卡片3 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-icon gold">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <h3>顺通社区社会实践</h3>
+                    <div class="date">2024年9-10月 · 实习</div>
+                    <p class="desc">在昆明市官渡区经济开发区顺通社区参与社会实践，协助开展安全检查、环境整治、医保通知等工作。</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">社区服务</span>
+                        <span class="portfolio-tag">基层工作</span>
+                        <span class="portfolio-tag">沟通协调</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">© 2026 张嫚琳 · 初中信息技术教师求职简历</p>
+                <div class="footer-links">
+                    <a href="index.html">返回主页</a>
+                    <span class="separator">|</span>
+                    <a href="index.html#contact">联系我</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部 -->
+    <button id="backToTop" class="back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
